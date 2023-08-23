@@ -1,6 +1,6 @@
 {
-  "name": "hastscript",
-  "version": "8.0.0",
+  "name": "hastscript-case-sensitive",
+  "version": "8.0.0-0",
   "description": "hast utility to create trees",
   "license": "MIT",
   "keywords": [
@@ -17,8 +17,8 @@
     "hyperscript",
     "dsl"
   ],
-  "repository": "syntax-tree/hastscript",
-  "bugs": "https://github.com/syntax-tree/hastscript/issues",
+  "repository": "antfu/hastscript-case-sensitive",
+  "bugs": "https://github.com/antfu/hastscript-case-sensitive/issues",
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/unified"
@@ -65,12 +65,13 @@
     "type-coverage": "^2.0.0",
     "typescript": "^5.0.0",
     "unist-builder": "^4.0.0",
-    "xo": "^0.55.0"
+    "xo": "^0.55.0",
+    "hastscript": "."
   },
   "scripts": {
     "prepack": "npm run build && npm run format",
     "build": "tsc --build --clean && tsc --build && tsd && type-coverage",
-    "generate": "node script/generate-jsx.js && node script/build.js",
+    "generate": "node script/generate-jsx.js",
     "format": "remark . -qfo && prettier . -w --log-level warn && xo --fix",
     "test-api": "node --conditions development test/index.js",
     "test-coverage": "c8 --100 --reporter lcov npm run test-api",
